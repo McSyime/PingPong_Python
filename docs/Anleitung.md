@@ -7,3 +7,4 @@ Als Hardware benötigen wir lediglich unseren PC, da wir die Anwendung nicht auf
 ## Software 
 Als Software benötigen wir Oracle VirtualBox, um unsere Debian-VM auszuführen. Wir verwenden Github als Datenzentrum (Code und Dokumentation), Python als Programmiersprache und Git, um die Versionen unseres Projekts zu verfolgen. 
 
+## Methodik 
