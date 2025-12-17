@@ -19,7 +19,7 @@ server/
 - README.md
 
 docs/
-- protocol.md
+- protokoll.md
 - README.md
 
 ## Voraussetzungen
