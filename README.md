@@ -12,8 +12,10 @@ Der Server antwortet mit `n + 1`.
 ## Architektur
 client/
 client.py
+README.md
 server/
 server.py
+README.md
 docs/
 protocol.md
 README.md
@@ -27,3 +29,13 @@ README.md
 'python server/server.py'
 'python client/client.py' 
 
+## Geplante Entwicklungen
+- Strukturierte Nachrichten (JSON)
+- Fehlerbehandlung
+- Serverprotokolle
+- Automatisierte Tests
+
+## Workflow Git
+- main: stabile Version
+- develop: Entwicklung
+- feature/*: neue Funktionen
