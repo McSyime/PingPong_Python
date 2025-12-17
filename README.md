@@ -42,6 +42,10 @@ docs/
 - develop: Entwicklung
 - feature/*: neue Funktionen
 
+## Protokoll
+Die Protokolle befinden sich unter: 
+- [docs/protocol.md](docs/protocol.md)
+
 ## ACK- und NACK-Antworten
 Zur Fehlerbehandlung werden zwei Arten von Antworten verwendet:
 
