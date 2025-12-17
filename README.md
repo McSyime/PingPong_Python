@@ -10,17 +10,17 @@ Der Server antwortet mit `n + 1`.
 - Mit Git, Terminal und GNU/Linux arbeiten
 
 ## Architektur
-client
+client/
 - client.py
 - README.md
 
-server
+server/
 - server.py
 - README.md
 
-docs
-protocol.md
-README.md
+docs/
+- protocol.md
+- README.md
 
 ## Voraussetzungen
 - Python 3.14
