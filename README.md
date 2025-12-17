@@ -10,13 +10,15 @@ Der Server antwortet mit `n + 1`.
 - Mit Git, Terminal und GNU/Linux arbeiten
 
 ## Architektur
-client/
+client
 - client.py
 - README.md
-server/
+
+server
 - server.py
 - README.md
-docs/
+
+docs
 protocol.md
 README.md
 
