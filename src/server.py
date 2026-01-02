@@ -17,7 +17,7 @@ def main():
 
         # Start listening for incoming connections
         server_socket.listen()
-        print(f"Pong server listening on {HOST}:{PORT} ...")
+        print(f"Pong server listening on {HOST}:{PORT}")
 
         # Server runs forever and handles one client at a time
         while True:
