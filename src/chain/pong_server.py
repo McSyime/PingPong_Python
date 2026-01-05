@@ -37,7 +37,7 @@ def main():
 
                 # Convert bytes to string and remove whitespace
                 message = data.decode("utf-8").strip()
-                print(f"Received: {message}")
+                print(f"Received from Pang: {message}")
 
                 # Try to interpret the message as an integer
                 try:

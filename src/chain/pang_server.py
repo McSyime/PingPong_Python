@@ -47,7 +47,6 @@ def main():
 
                 # Increment spin
                 number = int(message) + 1
-                print(f"Incremented to: {number}")
 
                 # Send to Pong
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as pong_conn:
