@@ -28,8 +28,8 @@ docs/
 
 ## Server und Client starten
 
-'python server/server.py'
-'python client/client.py' 
+- 'python server/server.py'
+- 'python client/client.py' 
 
 ## Geplante Entwicklungen
 - Strukturierte Nachrichten (JSON)
