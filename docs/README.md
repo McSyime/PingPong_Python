@@ -109,12 +109,41 @@ python3 client.py
 
 ### 1.1.4 Kette von Ping-Pongs
 
+In dieser Variante wird eine Kette aus zwei Servern genutzt: der Pang-Server empfängt eine Zahl vom Client, erhöht sie,
+leitet sie an den Pong-Server weiter, erhält dessen Antwort, erhöht sie erneut und gibt das Ergebnis zurück an den
+Client. So entsteht eine kleine „Ping-Pong-Kette“ mit mehreren Verarbeitungsschritten.
+
+1. In das Verzeichnis **PingPong_Python/src/chain** wechseln:
+
+```
+cd PingPong_Python/src/chain
+```
+
+2. Den Pong-Server **pong_server.py** starten:
+
+```
+python3 pong_server.py
+```
+
+3. In einem zweiten Terminal den Pang-Server **pang_server.py** starten.
+
+```
+python3 pang_server.py
+```
+
+4. In einem dritten Terminal den Client **client.py** starten.
+
+```
+python3 client.py
+```
+
 ### 1.1.5 Ping-Pong in einer Stern Topologie
 
 In dieser Umsetzung wird eine Stern-Topologie verwendet, bei der der Hub den zentralen Knoten bildet.
 Der Client (Ping) verbindet sich ausschliesslich mit dem Hub und nicht direkt mit den einzelnen Servern.
 
-Der Hub kennt die Ports aller Pang- und Pong-Server und leitet die empfangene Zahl in einer fest definierten Reihenfolge (statisches Routing) an diese weiter.
+Der Hub kennt die Ports aller Pang- und Pong-Server und leitet die empfangene Zahl in einer fest definierten
+Reihenfolge (statisches Routing) an diese weiter.
 Die verwendeten Ports können bei Bedarf angepasst werden, wodurch die Topologie flexibel konfigurierbar ist.
 
 Jeder Pang- und Pong-Server erhöht die empfangene Zahl um +1 und sendet das Ergebnis an den Hub zurück.
