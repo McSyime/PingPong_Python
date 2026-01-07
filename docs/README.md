@@ -79,6 +79,34 @@ python3 client.py
 
 ### 1.1.3 Ping-Pong mit einem Ping-Pong Proxy
 
+In dieser Variante wird ein Proxy zwischen Client und Pong-Server geschaltet. Der Client sendet eine Zahl n an den
+Proxy, der die Nachricht an den Pong-Server weiterleitet. Der Pong-Server antwortet mit n + 1, und der Proxy leitet die
+Antwort zurück an den Client.
+
+1. In das Verzeichnis **PingPong_Python/src/proxy** wechseln:
+
+```
+cd PingPong_Python/src/proxy
+```
+
+2. Den Server **server.py** starten:
+
+```
+python3 server.py
+```
+
+3. In einem zweiten Terminal den Proxy-Server **proxy_server.py** starten.
+
+```
+python3 proxy_server.py
+```
+
+4. In einem dritten Terminal den Client **client.py** starten.
+
+```
+python3 client.py
+```
+
 ### 1.1.4 Kette von Ping-Pongs
 
 ### 1.1.5 Ping-Pong in einer Stern Topologie
