@@ -112,3 +112,11 @@ python3 client.py
 ### 1.1.5 Ping-Pong in einer Stern Topologie
 
 ### 1.1.6 Ping-Pong in einer vermaschten Topologie
+In dieser Umsetzung wird eine Stern-Topologie verwendet, bei der der Hub den zentralen Knoten bildet.
+Der Client (Ping) verbindet sich ausschliesslich mit dem Hub und nicht direkt mit den einzelnen Servern.
+
+Der Hub kennt die Ports aller Pang- und Pong-Server und leitet die empfangene Zahl in einer fest definierten Reihenfolge (statisches Routing) an diese weiter.
+Die verwendeten Ports können bei Bedarf angepasst werden, wodurch die Topologie flexibel konfigurierbar ist.
+
+Jeder Pang- und Pong-Server erhöht die empfangene Zahl um +1 und sendet das Ergebnis an den Hub zurück.
+Der Hub sammelt die Antworten und sendet erst am Ende das Endergebnis an den Client zurück.
