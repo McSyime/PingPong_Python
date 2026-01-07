@@ -9,11 +9,22 @@ DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 5005  # Hub-Port
 NUMBER = 1
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description="TCP Ping Client")
-    parser.add_argument("--host", default=DEFAULT_HOST)
-    parser.add_argument("--port", type=int, default=DEFAULT_PORT)
+    parser.add_argument(
+        "--host",
+        default=DEFAULT_HOST,
+        help=f"Hub host (default: {DEFAULT_HOST})"
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=DEFAULT_PORT,
+        help=f"Hub port (default: {DEFAULT_PORT})"
+    )
     return parser.parse_args()
+
 
 def main():
     args = parse_args()
@@ -27,6 +38,7 @@ def main():
 
         data = sock.recv(1024)
         print(f"Received: {data.decode('utf-8').strip()}")
+
 
 if __name__ == "__main__":
     main()

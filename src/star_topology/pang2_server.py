@@ -1,13 +1,33 @@
+import argparse
 import socket
 
-HOST = "127.0.0.1"
-PORT = 5002
+DEFAULT_HOST = "127.0.0.1"
+DEFAULT_PORT = 5002
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Pang2 Server")
+    parser.add_argument(
+        "--host",
+        default=DEFAULT_HOST,
+        help=f"Host to bind to (default: {DEFAULT_HOST})"
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=DEFAULT_PORT,
+        help=f"Port to listen on (default: {DEFAULT_PORT})"
+    )
+    return parser.parse_args()
 
 def main():
+    args = parse_args()
+    host = args.host
+    port = args.port
+
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind((HOST, PORT))
+        s.bind((host, port))
         s.listen()
-        print("Pang2 listening on port 5002")
+        print(f"Pang2 listening on {host}:{port}")
 
         while True:
             conn, _ = s.accept()
