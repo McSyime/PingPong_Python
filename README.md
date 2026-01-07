@@ -3,7 +3,7 @@ Einfaches Client/Server-Projekt in Python.
 Der Client sendet eine ganze Zahl `n` an den Server.
 Der Server antwortet mit `n + 1`.
 
-## Zielen des Projekt 
+## Ziele des Projekt 
 - Die Grundlagen der Netzwerkkommunikation verstehen
 - Ein einfaches Protokoll implementieren
 - Lernen, wie man ein Client/Server-Projekt strukturiert
