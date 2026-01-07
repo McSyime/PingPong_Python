@@ -55,6 +55,28 @@ python3 client.py
 
 ### 1.1.2 Ping-Pong mit UDP Fehlerbehandlung
 
+Diese Variante verwendet UDP anstelle von TCP. Da UDP keine zuverlässige Zustellung garantiert, implementiert der Client
+eine einfache Fehlerbehandlung mittels Timeout. Ein Fehler kann beispielsweise erzeugt werden, indem nur der Client
+gestartet wird oder dem Client ein anderer Host bzw. Port übergeben wird als dem Server.
+
+1. In das Verzeichnis **PingPong_Python/src/udp** wechseln:
+
+```
+cd PingPong_Python/src/udp
+```
+
+2. Den Server **server.py** starten:
+
+```
+python3 server.py
+```
+
+3. In einem zweiten Terminal den Client **client.py** starten.
+
+```
+python3 client.py
+```
+
 ### 1.1.3 Ping-Pong mit einem Ping-Pong Proxy
 
 ### 1.1.4 Kette von Ping-Pongs
