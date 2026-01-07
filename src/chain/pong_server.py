@@ -4,21 +4,42 @@ Pong server.
 Receives a number, increments it, and sends it back to Pang.
 """
 
-import socket
+import argparse  # Provides argument parser
+import socket  # Provides networking (socket) functionality
 
-HOST = "127.0.0.1"
-PORT = 5001  # Pong listens here
+DEFAULT_HOST = "127.0.0.1"
+DEFAULT_PORT = 5001  # Pong listens here
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="TCP Pong Server")
+    parser.add_argument(
+        "--host",
+        default=DEFAULT_HOST,
+        help=f"Host to bind to (default: {DEFAULT_HOST})"
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=DEFAULT_PORT,
+        help=f"Port to listen on (default: {DEFAULT_PORT})"
+    )
+    return parser.parse_args()
 
 
 def main():
+    args = parse_args()
+    host = args.host
+    port = args.port
+
     # Create a TCP socket (IPv4, stream-based)
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         # Bind the socket to the given host and port
-        server_socket.bind((HOST, PORT))
+        server_socket.bind((host, port))
 
         # Start listening for incoming connections
         server_socket.listen()
-        print(f"Pong server listening on {HOST}:{PORT}")
+        print(f"Pong server listening on {host}:{port}")
 
         while True:
             # Wait for a pang server to connect
