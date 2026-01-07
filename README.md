@@ -149,4 +149,44 @@ Die verwendeten Ports können bei Bedarf angepasst werden, wodurch die Topologie
 Jeder Pang- und Pong-Server erhöht die empfangene Zahl um +1 und sendet das Ergebnis an den Hub zurück.
 Der Hub sammelt die Antworten und sendet erst am Ende das Endergebnis an den Client zurück.
 
+1. In das Verzeichnis **PingPong_Python/src/star_topology** wechseln:
 
+```
+cd PingPong_Python/src/star_topology
+```
+
+2. Den Hub **hub.py** starten:
+
+```
+python3 hub.py
+```
+
+3. In einem zweiten Terminal den Pang-Server **pang_server.py** starten.
+
+```
+python3 pang_server.py
+```
+
+4. In einem dritten Terminal den zweiten Pang-Server **pang2_server.py** starten.
+
+```
+python3 pang2_server.py
+```
+
+5. In einem vierten Terminal den Pong-Server **pong_server.py** starten.
+
+```
+python3 pong_server.py
+```
+
+6. In einem fünften Terminal den zweiten Pong-Server **pong2_server** starten.
+
+```
+python3 pong2_server.py
+```
+
+7. In einem sechsten Terminal den Client **client.py** starten.
+
+```
+python3 client.py
+```
