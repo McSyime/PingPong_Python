@@ -161,6 +161,12 @@ cd PingPong_Python/src/star_topology
 python3 hub.py
 ```
 
+**Beispiel für explizit definierte Route:**
+
+```
+python3 hub.py --node Pang1:127.0.0.1:6000 --node Pong1:127.0.0.1:6001 --node Pang2:127.0.0.1:6002 --node Pong2:127.0.0.1:6003
+```
+
 3. In einem zweiten Terminal den Pang-Server **pang_server.py** starten.
 
 ```
