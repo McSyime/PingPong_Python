@@ -4,19 +4,40 @@ Simple UDP Pong server.
 Receives a number n and responds with n + 1.
 """
 
+import argparse  # Provides argument parser
 import socket  # Provides networking (socket) functionality
 
-HOST = "127.0.0.1"  # localhost
-PORT = 5000         # UDP port to listen on
+DEFAULT_HOST = "127.0.0.1"  # localhost
+DEFAULT_PORT = 5000  # UDP port to listen on
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="UDP Pong Server")
+    parser.add_argument(
+        "--host",
+        default=DEFAULT_HOST,
+        help=f"Host to bind to (default: {DEFAULT_HOST})"
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=DEFAULT_PORT,
+        help=f"Port to listen on (default: {DEFAULT_PORT})"
+    )
+    return parser.parse_args()
 
 
 def main():
+    args = parse_args()
+    host = args.host
+    port = args.port
+
     # Create a UDP socket (IPv4, datagram-based)
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as server_socket:
 
         # Bind the socket to the given host and port
-        server_socket.bind((HOST, PORT))
-        print(f"UDP Pong server listening on {HOST}:{PORT}")
+        server_socket.bind((host, port))
+        print(f"UDP Pong server listening on {host}:{port}")
 
         # Server runs forever and handles incoming datagrams
         while True:
